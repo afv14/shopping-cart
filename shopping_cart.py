@@ -44,24 +44,26 @@ def to_usd(my_price):
 
 #print(products)
 
-#ASK FOR USER INPUTS
+while True:
+    #ASK FOR USER INPUTS
 
+    product_id = input("Please input a product identifier: ")
+    print(product_id)
+    print(type(product_id))
+    if product_id == "DONE":
+        break
 
+    #LOOK UP CORRESPONDING PRODUCTS
 
-product_id = input("Please input a product identifier: ")
-print(product_id)
-print(type(product_id))
+    matching_products = [x for x in products if str(x["id"]) == str(product_id)]
+    print(matching_products)
 
-#LOOK UP CORRESPONDING PRODUCTS
+    #print the name of the matching product
+    print(len(matching_products))
 
-matching_products = [x for x in products if str(x["id"]) == str(product_id)]
-print(matching_products)
+    #print the name of the matching product
+    item = matching_products[0]
+    print(item["name"],item["price"])
 
-#print the name of the matching product
-print(len(matching_products))
-
-#print the name of the matching product
-item = matching_products[0]
-print(item["name"],item["price"])
 
 
