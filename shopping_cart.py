@@ -49,6 +49,7 @@ subtotal = 0     #variable to hold total for transaction
 transaction_ids = []    #list to hold all of the products in the transaction
 
 #Condition to get user out of the loop
+#??? How do I fail gracefully right now my code accepts letters as an input
 while True:
     #ASK FOR USER INPUTS
     #product_id variable is a string for each product in a transaction
