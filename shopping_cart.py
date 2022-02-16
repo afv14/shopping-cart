@@ -2,7 +2,6 @@
 
 #imports to use in program
 from nis import match
-from datetime import datetime
 
 
 products = [
@@ -69,6 +68,7 @@ print("WWW.HEBGROCERY.COM")
 print("-----------------------")
 #got help from Eugenie Chandon-Moet for Date and Time code
 #????how do I make this say PM
+from datetime import datetime
 current_date = datetime.now().strftime("%m/%d/%Y %H:%M:%S")
 print("CHECKOUT AT:", current_date)
 print("-----------------------")
@@ -85,7 +85,9 @@ for product_id in transaction_ids:
 
 print("-----------------------")
 print(F"SUBTOTAL: {to_usd(subtotal)}")
-tax = subtotal * 0.0875
+import os
+tax_rate = float(os.getenv("TAXRATE", default="0.0875"))    #ask user for a tax rate environment variable
+tax = subtotal * tax_rate
 print(F"TAX: {to_usd(tax)}")
 total = subtotal + tax
 print(F"TOTAL: {to_usd(total)}")
