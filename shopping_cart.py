@@ -1,5 +1,6 @@
 # shopping_cart.py
 
+#imports to use in program
 from nis import match
 
 
@@ -42,10 +43,9 @@ def to_usd(my_price):
 
 # TODO: write some Python code here to produce the desired output
 
-#variable to hold total for transaction
-total_price = 0
-#list to hold all of the products in the transaction
-transaction_ids = []
+
+total_price = 0     #variable to hold total for transaction
+transaction_ids = []    #list to hold all of the products in the transaction
 
 #Condition to get user out of the loop
 while True:
@@ -59,14 +59,26 @@ while True:
     else:
         transaction_ids.append(product_id)
 
+#PROGRAM OUTPUT
+#Header
+print("-----------------------")
+print("HEB GROCERY")
+print("WWW.HEBGROCERY.COM")
+print("-----------------------")
+#got help from Eugenie Chandon-Moet for Date and Time code
+dt_string = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+print("CHECKOUT AT:", dt_string)
+print("-----------------------")
 
+#List of products in transaction
+print("SELECTED PRODUCTS: ")
 for product_id in transaction_ids:
     #matching_products is a list of everything in the transaction
     matching_products = [x for x in products if str(x["id"]) == str(product_id)]
         
     item = matching_products[0] #go into the list of dictionaries and grab the corresponding ID
     total_price = total_price + item["price"]   #add the current item to total price
-    print("SELECTED PRODUCTS: " + item["name"] + " " + str(item["price"])) #print the name of the item
+    print("... " + item["name"] + " " + str(item["price"])) #print the name of the item
 
 
 #DISPLAY INFORMATION TO USER
