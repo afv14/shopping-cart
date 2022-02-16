@@ -45,7 +45,7 @@ def to_usd(my_price):
 # TODO: write some Python code here to produce the desired output
 
 
-total_price = 0     #variable to hold total for transaction
+subtotal = 0     #variable to hold total for transaction
 transaction_ids = []    #list to hold all of the products in the transaction
 
 #Condition to get user out of the loop
@@ -78,12 +78,18 @@ for product_id in transaction_ids:
     matching_products = [x for x in products if str(x["id"]) == str(product_id)]
         
     item = matching_products[0] #go into the list of dictionaries and grab the corresponding ID
-    total_price = total_price + item["price"]   #add the current item to total price
+    subtotal = subtotal + item["price"]   #add the current item to total price
     print("... " + item["name"] + " " + str(item["price"])) #print the name of the item
 
+print("-----------------------")
+print(f"SUBTOTAL: {subtotal}")
+tax = subtotal * 0.0875
+print(f"TAX: {tax}")
+total = subtotal + tax
+print(f"TOTAL: {total}")
+print("-----------------------")
+print("THANKS, SEE Y'ALL REAL SOON!")
+print("-----------------------")
 
-#DISPLAY INFORMATION TO USER
-#PRINT TOTAL
-print("TOTAL PRICE: " + str(total_price))
 
 
