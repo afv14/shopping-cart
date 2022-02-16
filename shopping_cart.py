@@ -42,23 +42,26 @@ def to_usd(my_price):
 
 # TODO: write some Python code here to produce the desired output
 
-#print(products)
+#Ask User for their inputs
 
 while True:
     #ASK FOR USER INPUTS
 
     product_id = input("Please input a product identifier: ")
-    print(product_id)
-    print(type(product_id))
+    #print(type(product_id))    
+    #product_id variable is a string for each product in a transaction
+
+    #LET CASHIER END TRANSACTION
     if product_id == "DONE":
         break
 
     #LOOK UP CORRESPONDING PRODUCTS
 
     matching_products = [x for x in products if str(x["id"]) == str(product_id)]
-    print(matching_products)
+    #print(type(matching_products))
+    #matching_products is a list of everything in the transaction
 
-    #print the name of the matching product
+    #print the length of transaction
     print(len(matching_products))
 
     #print the name of the matching product
