@@ -67,6 +67,7 @@ print("HEB GROCERY")
 print("WWW.HEBGROCERY.COM")
 print("-----------------------")
 #got help from Eugenie Chandon-Moet for Date and Time code
+#????how do I make this say PM
 current_date = datetime.now().strftime("%m/%d/%Y %H:%M:%S")
 print("CHECKOUT AT:", current_date)
 print("-----------------------")
@@ -79,14 +80,14 @@ for product_id in transaction_ids:
         
     item = matching_products[0] #go into the list of dictionaries and grab the corresponding ID
     subtotal = subtotal + item["price"]   #add the current item to total price
-    print("... " + item["name"] + " " + str(item["price"])) #print the name of the item
+    print(f"... {item['name']} ({to_usd(item['price'])})") #print the name of the item
 
 print("-----------------------")
-print(f"SUBTOTAL: {subtotal}")
+print(F"SUBTOTAL: {to_usd(subtotal)}")
 tax = subtotal * 0.0875
-print(f"TAX: {tax}")
+print(F"TAX: {to_usd(tax)}")
 total = subtotal + tax
-print(f"TOTAL: {total}")
+print(F"TOTAL: {to_usd(total)}")
 print("-----------------------")
 print("THANKS, SEE Y'ALL REAL SOON!")
 print("-----------------------")
