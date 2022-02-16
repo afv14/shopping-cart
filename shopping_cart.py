@@ -2,6 +2,7 @@
 
 #imports to use in program
 from nis import match
+from datetime import datetime
 
 
 products = [
@@ -66,8 +67,8 @@ print("HEB GROCERY")
 print("WWW.HEBGROCERY.COM")
 print("-----------------------")
 #got help from Eugenie Chandon-Moet for Date and Time code
-dt_string = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
-print("CHECKOUT AT:", dt_string)
+current_date = datetime.now().strftime("%m/%d/%Y %H:%M:%S")
+print("CHECKOUT AT:", current_date)
 print("-----------------------")
 
 #List of products in transaction
