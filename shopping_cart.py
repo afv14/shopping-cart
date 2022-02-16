@@ -44,6 +44,7 @@ def to_usd(my_price):
 
 #variable to hold total for transaction
 total_price = 0
+#list to hold all of the products in the transaction
 transaction_ids = []
 
 #Condition to get user out of the loop
@@ -63,11 +64,9 @@ for product_id in transaction_ids:
     #matching_products is a list of everything in the transaction
     matching_products = [x for x in products if str(x["id"]) == str(product_id)]
         
-    #print the name of the matching product
-    item = matching_products[0]
-    #add the current item to total price
-    total_price = total_price + item["price"]
-    print("SELECTED PRODUCTS: " + item["name"] + " " + str(item["price"]))
+    item = matching_products[0] #go into the list of dictionaries and grab the corresponding ID
+    total_price = total_price + item["price"]   #add the current item to total price
+    print("SELECTED PRODUCTS: " + item["name"] + " " + str(item["price"])) #print the name of the item
 
 
 #DISPLAY INFORMATION TO USER
