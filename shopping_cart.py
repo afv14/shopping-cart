@@ -44,29 +44,30 @@ def to_usd(my_price):
 
 #variable to hold total for transaction
 total_price = 0
+transaction_ids = []
 
 #Condition to get user out of the loop
 while True:
     #ASK FOR USER INPUTS
     #product_id variable is a string for each product in a transaction
-    product_id = input("Please input a product identifier: ")   
+    product_id = input("Please input a product identifier, or 'DONE' if there are no more items: ")   
     
-
     #LET CASHIER END TRANSACTION
     if product_id == "DONE":
         break
     else:
+        transaction_ids.append(product_id)
 
-    #CONTINUE IN THE LOOP
-        #matching_products is a list of everything in the transaction
-        matching_products = [x for x in products if str(x["id"]) == str(product_id)]
+
+for product_id in transaction_ids:
+    #matching_products is a list of everything in the transaction
+    matching_products = [x for x in products if str(x["id"]) == str(product_id)]
         
-
-        #print the name of the matching product
-        item = matching_products[0]
-        #add the current item to total price
-        total_price = total_price + item["price"]
-        print("SELECTED PRODUCTS: " + item["name"] + " " + str(item["price"]))
+    #print the name of the matching product
+    item = matching_products[0]
+    #add the current item to total price
+    total_price = total_price + item["price"]
+    print("SELECTED PRODUCTS: " + item["name"] + " " + str(item["price"]))
 
 
 #DISPLAY INFORMATION TO USER
