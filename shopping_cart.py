@@ -86,7 +86,8 @@ for product_id in transaction_ids:
 print("-----------------------")
 print(F"SUBTOTAL: {to_usd(subtotal)}")
 import os
-TAXRATE = float(os.getenv("TAXRATE", default="0.0875"))    #ask user for a tax rate environment variable
+TAXRATE = float(os.getenv("TAX_RATE", default="0.0875"))    #ask user for a tax rate environment variable
+print(TAXRATE)
 tax = subtotal * TAXRATE
 print(F"TAX: {to_usd(tax)}")
 total = subtotal + tax
