@@ -87,7 +87,6 @@ print("-----------------------")
 print(F"SUBTOTAL: {to_usd(subtotal)}")
 import os
 TAX_RATE = float(os.getenv("TAX_RATE", default="0.0875"))    #ask user for a tax rate environment variable
-print(TAX_RATE)
 tax = subtotal * TAX_RATE
 print(F"TAX: {to_usd(tax)}")
 total = subtotal + tax
