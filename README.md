@@ -17,8 +17,8 @@ Run the program:
 python shopping_cart.py
 ```
 
-Included in this shopping cart program is the option for the cashier to pass an enviromental variable through the command line terminal. A cashier is free to set their region's tax rate. Please ensure the tax rate is inputed as a decimal; an example is shown below:
+Included in this shopping cart program is the option for the cashier to pass an enviromental variable through their own .env file. A cashier is free to set their region's tax rate. Please ensure the tax rate is inputed as shown below in the .env file:
 
 ```sh
-TAXRATE="0.0875" python game.py
+TAXRATE=0.0875
 ```
